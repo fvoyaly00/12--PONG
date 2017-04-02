@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class game_Button : MonoBehaviour {
 
+	GameObject refobj;
+
 	// Use this for initialization
 	void Start () {
+		refobj = GameObject.Find ("System");
 	}
 	
 	// Update is called once per frame
@@ -22,5 +25,8 @@ public class game_Button : MonoBehaviour {
 	}
 
 	public void stop_button(){
+		game_System g1 = refobj.GetComponent<game_System> ();
+		g1.stop_game ();
+
 	}
 }
